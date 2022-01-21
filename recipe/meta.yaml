@@ -1,30 +1,35 @@
 {% set name = "dash_cytoscape" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
+
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0669c79c197e4b150a5db7a278d1c7acebc947f3f5cbad5274835ebb44f712cd
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dash_cytoscape-{{ version }}.tar.gz
+  sha256: a71ad4fe095570b71d4ad7c0d29199e9780c2e6796173d3b25fccc2cc58c855f
 
 build:
+  number: 0
   noarch: python
-  number: 1
-  script: '{{ PYTHON }} -m pip install . -vv '
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python
   run:
     - dash
-    - python >=3.5
+    - python
 
 test:
   imports:
     - dash_cytoscape
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/plotly/dash-cytoscape
@@ -38,6 +43,3 @@ about:
 extra:
   recipe-maintainers:
     - mxr-conda
-    - rluria14
-    - oblute
-    - adbeda
