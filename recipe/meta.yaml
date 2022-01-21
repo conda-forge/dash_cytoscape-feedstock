@@ -18,10 +18,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.6,<=3.9
   run:
     - dash
-    - python >=3.6
+    - python >=3.6,<=3.9
 
 test:
   imports:
