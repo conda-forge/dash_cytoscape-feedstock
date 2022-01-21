@@ -27,9 +27,8 @@ test:
   imports:
     - dash_cytoscape
   commands:
-    - pip check
-  requires:
-    - pip
+    - python -c "import importlib.util; assert importlib.util.find_spec('dash_cytoscape')"
+
 
 about:
   home: https://github.com/plotly/dash-cytoscape
