@@ -1,5 +1,5 @@
 {% set name = "dash_cytoscape" %}
-{% set version = "0.2.0" %}
+{% set version = "1.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0669c79c197e4b150a5db7a278d1c7acebc947f3f5cbad5274835ebb44f712cd
+  sha256: a61019d2184d63a2b3b5c06d056d3b867a04223a674cc3c7cf900a561a9a59aa
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: '{{ PYTHON }} -m pip install . -vv '
 
 requirements:
